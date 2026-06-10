@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "pancake-security"
+version = "0.1.0"
+description = "Pancake Security Plugin — Spring Security 风格的安全模块"
+authors = ["drayee <1473443474@qq.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "pancake_security"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pancake_framework = ">=0.2.0"
+pancake-web = ">=0.1.0"
+
+[tool.poetry.extras]
+bcrypt = ["bcrypt"]
+argon2 = ["argon2-cffi"]
+ldap = ["python-ldap"]
+oauth2 = ["httpx"]
+
+[tool.poetry.plugins."pancake.plugins"]
+security = "pancake_security:Main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

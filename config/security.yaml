@@ -1,0 +1,37 @@
+# pancake-security 默认配置
+security:
+  enabled: true
+
+  auth:
+    type: form           # form | jwt | both
+    form:
+      login_path: "/login"
+      logout_path: "/logout"
+    jwt:
+      secret: "change-me-in-production"
+      expire: 3600
+      header: "Authorization"
+      prefix: "Bearer"
+
+  password:
+    encoder: bcrypt      # bcrypt | argon2
+    bcrypt_rounds: 12
+
+  csrf:
+    enabled: true
+    token_name: "_csrf"
+    header_name: "X-CSRF-Token"
+    exempt_paths:
+      - "/api/**"
+
+  rate_limit:
+    enabled: true
+    max_attempts: 5
+    window: 300
+    lockout_time: 900
+
+  headers:
+    x_frame_options: "DENY"
+    content_security_policy: "default-src 'self'"
+    x_content_type_options: "nosniff"
+    strict_transport_security: "max-age=31536000"
