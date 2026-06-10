@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "pancake-security"
+name = "pancake-web-security"
 version = "0.1.0"
-description = "Pancake Security Plugin — Spring Security 风格的安全模块"
+description = "Pancake Web Security Plugin — Spring Security 风格的安全模块"
 authors = ["drayee <1473443474@qq.com>"]
 license = "MIT"
 readme = "README.md"
